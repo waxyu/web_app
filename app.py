@@ -96,8 +96,10 @@ def recommend_by_mood_and_age(mood, umur_pengguna, df, features, token):
 
 # Contoh fitur yang akan digunakan untuk menghitung kemiripan
 features = ['danceability', 'acousticness', 'energy', 'instrumentalness', 'tempo', 'valence', 'speechiness']
- 
-df = pd.read_csv('HasilCLusterRevisi.csv')
+
+
+file_path = 'HasilCLusterRevisi.csv'
+df = pd.read_csv(file_path)
 
 st.title('Sistem Rekomendasi Musik Berdasarkan Suasana Hati dan Umur Pada Spotify Menggunakan Metode K-Means') 
 
