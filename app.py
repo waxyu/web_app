@@ -99,7 +99,14 @@ def recommend_by_mood_and_age(mood, umur_pengguna, df, features, token):
 features = ['danceability', 'acousticness', 'energy', 'instrumentalness', 'tempo', 'valence', 'speechiness']
 
 
-df = pd.read_csv('https://github.com/waxyu/web_app/blob/main/HasilClusterRevisi.csv',error_bad_lines=False)
+# df = pd.read_csv('https://github.com/waxyu/web_app/blob/main/HasilClusterRevisi.csv',error_bad_lines=False)
+github_url = 'https://github.com/waxyu/web_app/blob/main/HasilClusterRevisi.csv'
+
+# Read the CSV file from the GitHub URL
+df = pd.read_csv(github_url)
+
+# Display the DataFrame
+st.dataframe(df)
 
 st.title('Sistem Rekomendasi Musik Berdasarkan Suasana Hati dan Umur Pada Spotify Menggunakan Metode K-Means') 
 
