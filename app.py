@@ -98,23 +98,7 @@ def recommend_by_mood_and_age(mood, umur_pengguna, df, features, token):
 features = ['danceability', 'acousticness', 'energy', 'instrumentalness', 'tempo', 'valence', 'speechiness']
 
 
-file_name = 'HasilCLusterRevisi.csv'
-
-# Get the current working directory
-current_directory = os.getcwd()
-
-# Specify the full file path
-file_path = os.path.join(current_directory, file_name)
-
-# Check if the file exists
-if os.path.isfile(file_path):
-    # File exists, proceed with reading
-    df = pd.read_csv(file_path)
-    # st.dataframe(df)
-else:
-    # File does not exist, display a message
-    st.error(f"The file '{file_name}' does not exist in the current directory.")
-# df = pd.read_csv(file_path)
+df = pd.read_csv('https://github.com/waxyu/web_app/blob/main/HasilClusterRevisi.csv')
 
 st.title('Sistem Rekomendasi Musik Berdasarkan Suasana Hati dan Umur Pada Spotify Menggunakan Metode K-Means') 
 
