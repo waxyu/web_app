@@ -46,7 +46,7 @@ def kategorikan_umur(umur):
         return 'remaja'
     elif umur <= 59:
         return 'dewasa'
-    else:
+    elif umur <= 85:
         return 'lansia'
     
 def recommend_by_mood_and_age(mood, umur_pengguna, df, features, token):
