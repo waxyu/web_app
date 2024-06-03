@@ -8,32 +8,32 @@ import base64
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import StandardScaler
  
-def get_spotify_access_token(client_id, client_secret):
-    auth_url = 'https://accounts.spotify.com/api/token'
-    auth_response = requests.post(auth_url, {
-        'grant_type': 'client_credentials'
-    }, headers={
-        'Authorization': f'Basic {base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()}'
-    })
-    if auth_response.status_code == 200:
-        return auth_response.json()['access_token']
-    else:
-        return None
+#def get_spotify_access_token(client_id, client_secret):
+    #auth_url = 'https://accounts.spotify.com/api/token'
+    #auth_response = requests.post(auth_url, {
+        #'grant_type': 'client_credentials'
+    #}, headers={
+        #'Authorization': f'Basic {base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()}'
+    #})
+    #if auth_response.status_code == 200:
+        #return auth_response.json()['access_token']
+    #else:
+        #return None
 
 # Fungsi untuk mengambil URL gambar album dari Spotify
-def get_album_art(track_id, token):
-    spotify_endpoint = f"https://api.spotify.com/v1/tracks/{track_id}"
-    headers = {"Authorization": f"Bearer {token}"}
-    response = requests.get(spotify_endpoint, headers=headers)
-    if response.status_code == 200:
-        track_data = response.json()
-        return track_data['album']['images'][0]['url']
-    else:
-        return None
+#def get_album_art(track_id, token):
+    #spotify_endpoint = f"https://api.spotify.com/v1/tracks/{track_id}"
+    #headers = {"Authorization": f"Bearer {token}"}
+    #response = requests.get(spotify_endpoint, headers=headers)
+    #if response.status_code == 200:
+        #track_data = response.json()
+        #return track_data['album']['images'][0]['url']
+    #else:
+        #return None
 
 # Ganti dengan Client ID dan Client Secret yang valid dari Spotify Developer Dashboard
-CLIENT_ID = '8a056f31514c4db2a8b2048086f6e3ef'
-CLIENT_SECRET = '0fcffe48f39e4440a4fb68c77d42d5bc'
+#CLIENT_ID = '8a056f31514c4db2a8b2048086f6e3ef'
+#CLIENT_SECRET = '0fcffe48f39e4440a4fb68c77d42d5bc'
 
 
 # Fungsi untuk merekomendasikan lagu berdasarkan mood dan kelompok umur
