@@ -115,7 +115,7 @@ umur_pengguna = st.number_input('Masukkan Umur', min_value=0, max_value=120, ste
 
 mood = st.selectbox('Pilih Suasana Hati', ['calm', 'energic', 'sad', 'happy', 'angry'])
 
-if st.button('Rekomendasikan'):
+##if st.button('Rekomendasikan'):
     # Permintaan access token baru dari Spotify API
     spotify_access_token = get_spotify_access_token(CLIENT_ID, CLIENT_SECRET)
     
